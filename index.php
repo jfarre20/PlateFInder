@@ -104,6 +104,8 @@ $data = getDatesAndCameras('/data/plateminder/data/images');
     <!-- Add OpenSeadragon CSS and JS -->
     <script src="./openseadragon.min.js"></script>
 
+    <!--favicon in ./favicon.ico-->
+    <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
 
     <!-- Add custom CSS (optional) -->
     <link rel="stylesheet" href="./styles.css">
