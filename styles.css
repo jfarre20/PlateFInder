@@ -1,0 +1,173 @@
+body {
+    background-color: #1c1c1c;
+    color: #d0d0d0;
+}
+
+.container {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 1176px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #fff;
+}
+
+.date-item,
+.camera-item {
+    cursor: pointer;
+    color: #ccc;
+}
+
+.date-item:hover,
+.camera-item:hover {
+    color: #fff;
+}
+
+.result-item {
+    background-color: #3c3c3c;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: fit-content;
+    margin-right: 7px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+}
+
+.result-item p {
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.highlight {
+    border-block: 3px solid #000000;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.result-item:hover {
+    background-color: #5c5c5c;
+    cursor: pointer;
+}
+
+#results {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.result-item p {
+    margin-bottom: 5px;
+}
+
+input,
+button {
+    background-color: #3c3c3c;
+    color: #d0d0d0;
+    border: none;
+}
+
+button:hover {
+    background-color: #5c5c5c;
+}
+
+input::placeholder {
+    color: #b0b0b0;
+}
+
+input:focus {
+    background-color: #3c3c3c;
+}
+
+/* Update the selector to target .form-control instead of input */
+.form-control,
+button {
+    background-color: #000;
+    color: #d0d0d0;
+    border: none;
+}
+
+/* Update the selector to target .form-control::placeholder */
+.form-control::placeholder {
+    color: #b0b0b0;
+}
+
+/* Add the following new rule */
+.form-control:focus {
+    background-color: #3c3c3c;
+    color: #d0d0d0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .result-item {
+        padding: 5px;
+        width: fit-content;
+    }
+}
+
+#cameras-list {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#search-form{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/* Full-screen element CSS */
+.full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  overflow: hidden;
+}
+
+#plate{
+    outline: auto;
+    padding-left: 4px;
+    padding-right: 4px;
+    background: black;
+    color: #ffffff;
+    font-weight: 900;
+    font-style: unset;
+    font-family: monospace;
+    outline-style: inset;
+    outline-color: #cacacaca;
+    border-radius: 1px;
+}
+
+#time{
+    font-family: monospace;
+    color: #ffffff;
+}
