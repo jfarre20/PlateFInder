@@ -229,8 +229,17 @@ $data = getDatesAndCameras('/data/plateminder/data/images');
 
                 resultItem.append(resultTimestamp);
                 resultItem.append(resultLicensePlate);
+                
                 $("#results").append(resultItem);
             });
+
+            //if no results, show no results
+            if (filteredImages.length == 0) {
+                var resultItem = $("<div>").addClass("result-item");
+                var resultTimestamp = $("<p id=time>").text("No Results");
+                resultItem.append(resultTimestamp);
+                $("#results").append(resultItem);
+            }
         }
 
         // When a date item is clicked
