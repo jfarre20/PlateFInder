@@ -199,19 +199,21 @@ $data = getDatesAndCameras('/data/plateminder/data/images');
             $("#results").empty();
 
             filteredImages.forEach(function (image) {
-                //convert the 14_26_56_113 timestamp to readable time
+                //convert the HH_MM_SS_SSS timestamp to readable time
                 var timestamp = image.timestamp;
                 var timestampArray = timestamp.split("_");
                 //convert to EST
-                var hour = timestampArray[0] - 4;
+                var hour = (parseInt(timestampArray[0]) - 4 + 24) % 24; // Add 24 and use modulo to handle negative hours
                 //am or pm
                 var ampm = "AM";
-                if (hour > 12) {
+                if (hour >= 12) {
                     ampm = "PM";
                 }
                 //convert to 12 hour time
                 if (hour > 12) {
                     hour = hour - 12;
+                } else if (hour === 0) {
+                    hour = 12; // Convert 0 hours to 12 for 12-hour time format
                 }
                 var minute = timestampArray[1];
                 var second = timestampArray[2];
@@ -278,17 +280,17 @@ $data = getDatesAndCameras('/data/plateminder/data/images');
                         var timestamp = image.timestamp;
                         var timestampArray = timestamp.split("_");
                         //convert to EST
-                        var hour = timestampArray[0] - 4;
+                        var hour = (parseInt(timestampArray[0]) - 4 + 24) % 24; // Add 24 and use modulo to handle negative hours
                         //am or pm
                         var ampm = "AM";
-                        if (hour > 12) {
-                            hour = hour - 12;
+                        if (hour >= 12) {
                             ampm = "PM";
                         }
-
                         //convert to 12 hour time
                         if (hour > 12) {
                             hour = hour - 12;
+                        } else if (hour === 0) {
+                            hour = 12; // Convert 0 hours to 12 for 12-hour time format
                         }
                         var minute = timestampArray[1];
                         var second = timestampArray[2];
@@ -298,8 +300,8 @@ $data = getDatesAndCameras('/data/plateminder/data/images');
                         var readableDate = hour + ":" + minute + ":" + second + " " + ampm;
                         //console.log(readableDate);
                         //add date to the readable time
-                        date = date.split("_").join("-");
-                        readableDate = date + " " + readableDate;
+                        date2 = date.split("_").join("-");
+                        readableDate = date2 + " " + readableDate;
                     
                         var resultItem = $("<div>").addClass("result-item");
                         var resultImage = $("<img>").attr("src", image.filepath).attr("width", "200"); // Adjust thumbnail width as needed
