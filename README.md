@@ -9,6 +9,8 @@ Dump everything into a www/platefinder directory
 edit this line:
 
       $data = getDatesAndCameras('/data/plateminder/data/images');
+      
+to point to where plateminder dumps the photos, ensure read permission to that directory
 
 
 also edit this line for your timezone if your plateminder container is set to UTC like mine is
@@ -16,8 +18,6 @@ also edit this line for your timezone if your plateminder container is set to UT
       //convert to EST
       var hour = (parseInt(timestampArray[0]) - 4 + 24) % 24; // Add 24 and use modulo to handle negative hours
 
-to point to where plateminder dumps the photos
 
-ensure read permission
 
 enjoy
